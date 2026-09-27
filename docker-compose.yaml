@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  pipeline:
+    build: .
+    command: python src/pipeline.py --random --log-measurements
+    volumes:
+      - ./logs:/app/logs
+  streamlit:
+    build: .
+    command: streamlit run streamlit_app/app.py --server.port 8501 --server.address 0.0.0.0
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./logs:/app/logs

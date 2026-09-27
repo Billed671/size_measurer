@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+logs/
+*.npz
+*.json
+airflow.db
+airflow.cfg
+.pytest_cache/
